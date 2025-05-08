@@ -1,0 +1,24 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+}
+
+allprojects {
+	group = 'com.proj'
+	version = '1.0.0'
+
+	repositories {
+		mavenCentral()
+	}
+}
+
+subprojects {
+	apply plugin: 'java'
+
+	java {
+		sourceCompatibility = JavaVersion.VERSION_22
+		targetCompatibility = JavaVersion.VERSION_22
+	}
+}
+

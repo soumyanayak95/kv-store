@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+kvnode:
+  name: worker1
+  self: localhost:8081
+  id: worker1
+  port: 8080
+  leader: worker
+  cluster:
+    - leader:8080
+    - worker1:8080
+    - worker2:8080

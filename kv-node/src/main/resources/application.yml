@@ -1,0 +1,5 @@
+server:
+  port: 8080 # Default, overridden per profile
+
+kvnode:
+  host: localhost
