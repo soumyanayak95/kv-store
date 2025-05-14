@@ -1,6 +1,27 @@
 version: '3.8'
 
 services:
+  consul:
+    image: hashicorp/consul:latest
+    ports:
+      - "8500:8500"
+    command: consul agent -dev -client=0.0.0.0
+    networks:
+      - app-network
+
+  gateway:
+    build:
+      context: .
+      dockerfile: gateway/Dockerfile
+    ports:
+      - "8084:8084"
+    depends_on:
+      - consul
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    networks:
+      - app-network
+
   leader:
     build:
       context: .
