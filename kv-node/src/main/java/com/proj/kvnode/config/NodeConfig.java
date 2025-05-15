@@ -8,28 +8,55 @@ import java.util.List;
 @Component
 @ConfigurationProperties(prefix = "kvnode")
 public class NodeConfig {
+    private String name;
     private String id;
-    private String host;
+    private String self;
     private int port;
     private String leader;
     private List<String> cluster;
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-
-    public String getHost() { return host; }
-    public void setHost(String host) { this.host = host; }
-
-    public int getPort() { return port; }
-    public void setPort(int port) { this.port = port; }
 
     public String getLeader() { return leader; }
-    public void setLeader(String leader) { this.leader = leader; }
 
     public List<String> getCluster() { return cluster; }
-    public void setCluster(List<String> cluster) { this.cluster = cluster; }
 
     public String getSelfAddress() {
-        return host + ":" + port;
+        return self;
+    }
+
+    public void setCluster(List<String> cluster) {
+        this.cluster = cluster;
+    }
+
+    public void setLeader(String leader) {
+        this.leader = leader;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
+
+    public void setSelf(String self) {
+        this.self = self;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

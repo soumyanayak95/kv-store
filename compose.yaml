@@ -30,7 +30,7 @@ services:
       - "8080:8080"
     container_name: leader
     environment:
-      - PROFILE=leader
+      - SPRING_PROFILES_ACTIVE=leader
     networks:
       - app-network
 
@@ -42,7 +42,7 @@ services:
       - "8081:8080"
     container_name: worker1
     environment:
-      - PROFILE=worker1
+      - SPRING_PROFILES_ACTIVE=worker1
     networks:
       - app-network
 
@@ -54,7 +54,7 @@ services:
       - "8082:8080"
     container_name: worker2
     environment:
-      - PROFILE=worker2
+      - SPRING_PROFILES_ACTIVE=worker2
     networks:
       - app-network
 
