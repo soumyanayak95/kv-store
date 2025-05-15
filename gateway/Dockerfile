@@ -1,9 +1,4 @@
 FROM eclipse-temurin:22-jdk
-
 WORKDIR /app
-
-COPY kv-node/build/libs/kv-node-0.0.1-SNAPSHOT.jar app.jar
-
-EXPOSE 8080
-
+COPY gateway/build/libs/gateway-*.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]

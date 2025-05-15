@@ -2,12 +2,12 @@ server:
   port: 8080
 
 kvnode:
-  cluster:
-    - leader:8080
-    - worker1:8080
-    - worker2:8080
   name: leader
   self: localhost:8080
   id: leader
   port: 8080
   leader: leader
+  cluster:
+    - leader:8080
+    - worker1:8080
+    - worker2:8080

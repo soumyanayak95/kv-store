@@ -12,11 +12,21 @@ repositories {
     mavenCentral()
 }
 springBoot {
-    mainClass = 'com.proj.kvnode.KvNodeApp' // replace with your actual class
+    mainClass = 'com.proj.kvnode.KvNodeApp'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2023.0.1"
+    }
 }
 
 dependencies {
     implementation project(':kv-core')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'

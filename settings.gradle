@@ -1,4 +1,4 @@
 rootProject.name = 'kvdb'
 include 'kv-core'
 include 'kv-node'
-
+include 'gateway'
